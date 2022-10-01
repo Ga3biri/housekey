@@ -8,29 +8,8 @@
         <mat-icon color="warn" matChipRemove (click)="remove('serviceType')">cancel</mat-icon>
     </mat-chip>
   
-    <mat-chip *ngIf="searchFields?.city">
-        {{searchFields?.city.name}}
-        <mat-icon color="warn" matChipRemove (click)="remove('city')">cancel</mat-icon>
+    <mat-chip *ngIf="searchFields?.location">
+        {{searchFields?.location}}
+        <mat-icon color="warn" matChipRemove (click)="remove('location')">cancel</mat-icon>
     </mat-chip> 
-    <mat-chip *ngIf="searchFields?.zipCode">
-        {{searchFields?.zipCode}}
-        <mat-icon color="warn" matChipRemove (click)="remove('zipCode')">cancel</mat-icon>
-    </mat-chip>    
-    <mat-chip *ngIf="searchFields?.neighborhood && searchFields?.neighborhood.length > 0">
-        <span *ngFor="let item of searchFields?.neighborhood; let last = last;" class="mr-1">{{item.name}}<span *ngIf="!last">,</span></span>
-        <mat-icon color="warn" matChipRemove (click)="remove('neighborhood')">cancel</mat-icon>
-    </mat-chip>
-    <mat-chip *ngIf="searchFields?.street && searchFields?.street.length > 0">
-        <span *ngFor="let item of searchFields?.street; let last = last;" class="mr-1">{{item.name}}<span *ngIf="!last">,</span></span>
-        <mat-icon color="warn" matChipRemove (click)="remove('street')">cancel</mat-icon>
-    </mat-chip>
-    <span *ngIf="searchFields?.features"> 
-        <span *ngFor="let feature of searchFields?.features; index as i">
-            <mat-chip *ngIf="feature.selected">
-                {{feature.name}} 
-                <mat-icon color="warn" matChipRemove (click)="remove('features,'+i)">cancel</mat-icon>
-            </mat-chip>
-        </span>  
-    </span>
-
 </mat-chip-list>

@@ -131,10 +131,107 @@ export class AppService {
   }
 
   public getPropertyTypes(){
-    return [ 
-      { id: 1, name: 'Office' },
-      { id: 2, name: 'House' },
-      { id: 3, name: 'Apartment' }
+    return  [
+      {
+        "id" : 2,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Apartment ",
+        "name_ar" : "شقة"
+      },
+      {
+        "id" : 3,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Studio",
+        "name_ar" : "استديو"
+      },
+      {
+        "id" : 4,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Picece of ground",
+        "name_ar" : "قطعة أرض"
+      },
+      {
+        "id" : 5,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Shop",
+        "name_ar" : "محل"
+      },
+      {
+        "id" : 6,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Bulding",
+        "name_ar" : "مبنى"
+      },
+      {
+        "id" : 7,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Tawer",
+        "name_ar" : "برج"
+      },
+      {
+        "id" : 8,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Room",
+        "name_ar" : "غرف"
+      },
+      {
+        "id" : 9,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Resort",
+        "name_ar" : "منتجع"
+      },
+      {
+        "id" : 10,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "lounge",
+        "name_ar" : "استراحة"
+      },
+      {
+        "id" : 1,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Vila",
+        "name_ar" : "فيلا"
+      }
     ]
   }
 
@@ -151,13 +248,37 @@ export class AppService {
 
   
   public getServiceTypes(){
-    return [ 
-      { id: 1, name: 'For Sale' },
-      { id: 2, name: 'For Rent' },
-      { id: 3, name: 'Open House' },
-      { id: 4, name: 'No Fees' },
-      { id: 5, name: 'Hot Offer' },
-      { id: 6, name: 'Sold' }
+    return [
+      {
+        "id" : 1,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Buy",
+        "name_ar" : "شراء"
+      },
+      {
+        "id" : 2,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "name" : "Rent",
+        "name_ar" : "تأجير"
+      },
+      {
+        "id" : 3,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : null,
+        "name" : "Sell",
+        "name_ar" : "بيع"
+      }
     ]
   }
 
@@ -167,6 +288,257 @@ export class AppService {
       { id: 2, name: 'Chicago' },
       { id: 3, name: 'Los Angeles' },
       { id: 4, name: 'Seattle' } 
+    ]
+  }
+  public getAllLocations(){
+    return [
+      {
+        "id" : 3,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "مكة",
+        "name_en" : "Mecca"
+      },
+      {
+        "id" : 4,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "المدينة",
+        "name_en" : "Medina"
+      },
+      {
+        "id" : 5,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الاحساء",
+        "name_en" : "Al-Ahsa"
+      },
+      {
+        "id" : 6,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الطايف",
+        "name_en" : "Ta'if"
+      },
+      {
+        "id" : 7,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الدمام",
+        "name_en" : "Dammam"
+      },
+      {
+        "id" : 8,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "خميس مشيط",
+        "name_en" : "Khamis Mushait"
+      },
+      {
+        "id" : 9,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "بريدة",
+        "name_en" : "Buraidah"
+      },
+      {
+        "id" : 10,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الخبر",
+        "name_en" : "Khobar"
+      },
+      {
+        "id" : 11,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "تبوك",
+        "name_en" : "Tabuk"
+      },
+      {
+        "id" : 12,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "حائل",
+        "name_en" : "Ha'il"
+      },
+      {
+        "id" : 13,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "حفر الباطن",
+        "name_en" : "Hafar Al-Batin"
+      },
+      {
+        "id" : 14,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الخرج",
+        "name_en" : "Al-Kharj"
+      },
+      {
+        "id" : 15,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "القطيف",
+        "name_en" : "Qatif"
+      },
+      {
+        "id" : 16,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الجبيل",
+        "name_en" : "Jubail"
+      },
+      {
+        "id" : 17,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "ابها",
+        "name_en" : "Abha"
+      },
+      {
+        "id" : 18,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "نجران",
+        "name_en" : "Najran"
+      },
+      {
+        "id" : 19,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "ينبع",
+        "name_en" : "Yanbu"
+      },
+      {
+        "id" : 1,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "الرياض",
+        "name_en" : "Riyadh"
+      },
+      {
+        "id" : 2,
+        "changed_by" : null,
+        "changed_in_date" : null,
+        "created_by" : null,
+        "created_in_date" : null,
+        "status" : 0,
+        "cntry_id" : 1,
+        "code" : 1,
+        "name" : "test",
+        "name_ar" : "جدة",
+        "name_en" : "Jeddah"
+      }
     ]
   }
 
