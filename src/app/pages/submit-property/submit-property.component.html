@@ -11,10 +11,43 @@
                   <form formGroupName="basic" fxLayout="row wrap">
 
                       <div fxFlex="100" class="p-3">
-                        <h1 class="fw-500 text-center">Basic</h1>
+                        <h1 class="fw-500 text-center">Make Request</h1>
                       </div>
                               
                       <div fxFlex="100" class="px-2">
+                        <mat-form-field [appearance]="outline"  class="w-100">
+                            <mat-label>Property Type</mat-label> 
+                            <mat-select placeholder="Select Property Type" formControlName="propertyType">
+                                <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType.id">
+                                    {{propertyType.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+            
+                    <div fxFlex="100" class="px-2">
+                        <mat-form-field [appearance]="outline"  class="w-100">
+                            <mat-label>Service Type</mat-label>
+                            <mat-select placeholder="Select Service Type" formControlName="serviceType">
+                                <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType.id">
+                                    {{serviceType.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>        
+                    <div fxFlex="100" class="px-2">                         
+                        <mat-form-field [appearance]="outline"  class="w-100">
+                            <mat-label>Location</mat-label>
+                            <mat-select placeholder="Select Location..." formControlName="location" >
+                                <mat-option *ngFor="let location of locations" [value]="location.id">
+                                    {{location.name_en}}
+                                </mat-option>
+                            </mat-select> 
+                        </mat-form-field>
+                    </div>
+
+
+                      <div fxFlex="100" class="px-2 none">
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Title</mat-label>
                             <input matInput placeholder="Title" formControlName="title" required autocomplete="off">
@@ -22,28 +55,28 @@
                         </mat-form-field>
                       </div>  
                   
-                      <div fxFlex="100" class="px-2">
+                      <div fxFlex="100" class="px-2 none">
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Description</mat-label> 
                             <textarea matInput placeholder="Description" formControlName="desc" rows="7"></textarea> 
                         </mat-form-field> 
                       </div> 
                   
-                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2 ">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Price ($)</mat-label>
+                            <mat-label>Min Budget (€)</mat-label>
                             <input matInput placeholder="Enter sale or rent price" formControlName="priceDollar" autocomplete="off"> 
                         </mat-form-field>
                       </div> 
                   
                       <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Price (€)</mat-label>
+                            <mat-label>Max Budget (€)</mat-label>
                             <input matInput placeholder="Enter sale or rent price" formControlName="priceEuro" autocomplete="off"> 
                         </mat-form-field>
                       </div> 
                   
-                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2 none">
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Property Type</mat-label> 
                             <mat-select placeholder="Select Property Type" formControlName="propertyType" required>
@@ -55,7 +88,7 @@
                         </mat-form-field>
                       </div>
                   
-                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2">
+                      <div fxFlex="100" fxFlex.gt-xs="50" class="px-2 none">
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Property Status</mat-label>
                             <mat-select placeholder="Select Property Status" formControlName="propertyStatus" multiple>
@@ -66,15 +99,15 @@
                         </mat-form-field>
                       </div>
                   
-                      <div fxFlex="100" class="step-section pb-2">
+                      <div fxFlex="100" class="step-section pb-2 none">
                           <p class="mb-0"><span class="uppercase fw-500">Gallery</span><span class="text-muted mx-3">(max 8 images)</span></p>  
                           <input-file formControlName="gallery" fileLimit="8" fileAccept="image/*"></input-file>  
                       </div> 
                   
-                      <div fxFlex="100" class="mt-3 p-2" fxLayoutAlign="end center">
-                        <button mat-raised-button color="primary" matStepperNext fxLayout="row" fxLayoutAlign="center center" type="button">
-                          <span class="mx-1 uppercase">Next</span>                    
-                          <mat-icon>navigate_next</mat-icon>
+                      <div fxFlex="100" class="mt-3 p-2 just-center" fxLayoutAlign="end center">
+                        <button mat-raised-button color="primary" (click)="GoToPage()" fxLayout="row" fxLayoutAlign="center center" type="button">
+                          <span class="mx-1 uppercase">Make A Request</span>                    
+                          <!-- <mat-icon>navigate_next</mat-icon> -->
                         </button> 
                       </div> 
                   

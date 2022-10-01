@@ -45,9 +45,7 @@
                 </a>  
             </div>
 
-            <p class="uppercase fw-600 text-muted mt-5 mb-0">
-              <span [matBadge]="pagination?.total" matBadgeOverlap="false">Listed Properties</span>
-            </p>
+           <button class="mt-3" fxLayout="row" mat-raised-button color="accent" (click)="SendRequest()">Send Request</button>
 
         </div>
         <div fxFlex="100" fxFlex.gt-sm="33.3" class="p-3">
@@ -160,8 +158,8 @@
                 </app-properties-search-results-filters>                 
             </div>
 
-            <div *ngFor="let property of properties" [fxFlex]="(viewType=='grid') ? viewCol : 100"  class="item">                         
-                <app-property-item [property]="property" [viewType]="viewType" [viewColChanged]="viewCol" [fullWidthPage]="false"></app-property-item>
+            <div *ngFor="let property of properties;let i = index" [fxFlex]="(viewType=='grid') ? viewCol : 100"  class="item">                         
+                <app-property-item *ngIf="i<3" [property]="property" [viewType]="viewType" [viewColChanged]="viewCol" [fullWidthPage]="false"></app-property-item>
             </div>
 
             <div *ngIf="properties?.length == 0" fxFlex="100" fxLayoutAlign="center center" [style.min-height.px]="200">                

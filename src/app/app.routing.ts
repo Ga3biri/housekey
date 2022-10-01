@@ -4,11 +4,13 @@ import { Routes, RouterModule, PreloadAllModules  } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
+import { RequestTableComponent } from './pages/request-table/request-table.component';
 
 export const routes: Routes = [
     { 
         path: '', 
         component: PagesComponent, children: [
+            // {path:'request-table',component:RequestTableComponent},
             //{ path: '', redirectTo: '/landing', pathMatch: 'full' },
             { path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
             { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },

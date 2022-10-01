@@ -43,6 +43,7 @@ import { HorizontalMenuComponent } from './theme/components/menu/horizontal-menu
 import { VerticalMenuComponent } from './theme/components/menu/vertical-menu/vertical-menu.component';
 import { FooterComponent } from './theme/components/footer/footer.component';
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
+// import { RequestTableComponent } from './pages/request-table/request-table.component';
 
 
 
@@ -61,7 +62,8 @@ import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
     HorizontalMenuComponent,
     VerticalMenuComponent,
     FooterComponent,
-    LockScreenComponent
+    LockScreenComponent,
+    // RequestTableComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }), 
