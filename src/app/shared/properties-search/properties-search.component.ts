@@ -19,6 +19,7 @@ export class PropertiesSearchComponent implements OnInit {
   public propertyTypes = [];
   public serviceTypes = [];
   public cities = [];
+  public locations = [];
   public neighborhoods = [];
   public streets = [];
   public features = [];
@@ -32,18 +33,14 @@ export class PropertiesSearchComponent implements OnInit {
     this.propertyTypes = this.appService.getPropertyTypes();
     this.serviceTypes = this.appService.getServiceTypes();
     this.cities = this.appService.getCities();
+    this.locations = this.appService.getAllLocations();
     this.neighborhoods = this.appService.getNeighborhoods();
     this.streets = this.appService.getStreets();
     this.features = this.appService.getFeatures();
     this.form = this.fb.group({
       propertyType: null,
       serviceType: null, 
-     
-      city: null,
-      zipCode: null,
-      neighborhood: null,
-      street: null,
-   
+      location: null,
     }); 
 
     this.onSearchChange.emit(this.form);
@@ -93,13 +90,6 @@ export class PropertiesSearchComponent implements OnInit {
     this.onSearchClick.emit(); 
   }
 
-  public onSelectCity(){
-    this.form.controls['neighborhood'].setValue(null, {emitEvent: false});
-    this.form.controls['street'].setValue(null, {emitEvent: false});
-  }
-  public onSelectNeighborhood(){
-    this.form.controls['street'].setValue(null, {emitEvent: false});
-  }
 
   public getAppearance(){
     return (this.variant != 3) ? 'outline' : '';

@@ -6,7 +6,7 @@
             <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
                 <mat-label>Property Type</mat-label> 
                 <mat-select placeholder="Select Property Type" formControlName="propertyType">
-                    <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
+                    <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType.id">
                         {{propertyType.name}}
                     </mat-option>
                 </mat-select>
@@ -16,8 +16,8 @@
         <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">
             <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
                 <mat-label>Service Type</mat-label>
-                <mat-select placeholder="Select Service Type" formControlName="serviceType" multiple>
-                    <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType">
+                <mat-select placeholder="Select Service Type" formControlName="serviceType">
+                    <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType.id">
                         {{serviceType.name}}
                     </mat-option>
                 </mat-select>
@@ -25,43 +25,15 @@
         </div>        
         <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">                         
             <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
-                <mat-label>City</mat-label>
-                <mat-select placeholder="Select City..." formControlName="city" (selectionChange)="onSelectCity()">
-                    <mat-option *ngFor="let city of cities" [value]="city">
-                        {{city.name}}
+                <mat-label>Location</mat-label>
+                <mat-select placeholder="Select Location..." formControlName="location" >
+                    <mat-option *ngFor="let location of locations" [value]="location.id">
+                        {{location.name_en}}
                     </mat-option>
                 </mat-select> 
             </mat-form-field>
         </div>
 
-        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">
-            <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
-                <mat-label>Zip Code</mat-label>
-                <input matInput placeholder="exp. 98104" autocomplete="off" formControlName="zipCode">                  
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">                         
-            <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
-                <mat-label>Neighborhood</mat-label>
-                <mat-select placeholder="Select Neighborhood..." formControlName="neighborhood" multiple (selectionChange)="onSelectNeighborhood()">
-                    <mat-option *ngFor="let neighborhood of neighborhoods | filterNeighborhoods: form.get('city').value?.id" [value]="neighborhood">
-                        {{neighborhood.name}}
-                    </mat-option>
-                </mat-select> 
-            </mat-form-field>
-        </div>
-
-        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">                         
-            <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
-                <mat-label>Street</mat-label>
-                <mat-select placeholder="Select Street..." formControlName="street" multiple>
-                    <mat-option *ngFor="let street of streets | filterStreets : { neighborhoods:form.get('neighborhood').value, cityId:form.get('city').value?.id } " [value]="street">
-                        {{street.name}}
-                    </mat-option>
-                </mat-select> 
-            </mat-form-field>
-        </div>
 
     </div>
   
