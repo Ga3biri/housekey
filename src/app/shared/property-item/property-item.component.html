@@ -77,11 +77,8 @@
                     <span class="mx-2">{{property.published | date:"dd MMMM, yyyy" }}</span>
                 </p>
                 <div>
-<<<<<<< HEAD
-                    <a [routerLink]="['/agents', property.id]" mat-stroked-button color="primary" class="uppercase">Details</a>
-=======
-                    <a [routerLink]="['/properties', property.id]" mat-stroked-button color="primary" class="uppercase">View Profile</a>
->>>>>>> fc3a0ac574cffe215a7b07ad89d5af46dd971668
+                    <a *ngIf="property.serviceType == null" [routerLink]="['/agents', property.id]" mat-stroked-button color="primary" class="uppercase">Details</a>
+                    <a  *ngIf="property.serviceType != null"[routerLink]="['/properties', property.id]" mat-stroked-button color="primary" class="uppercase">View Profile</a>
                 </div> 
             </mat-card-actions> 
         </div>        
