@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,7 +10,13 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient) { }
+  public currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
+
+
+
+  
+  constructor(private http:HttpClient,private router:Router) { }
 
 
   // login(form){
@@ -18,30 +27,48 @@ export class AuthService {
 
 
 
-//   public get currentUserValue(): any {
-//     if(this.currentUserSubject.value != null) { return this.currentUserSubject.value }        
-//   }
+  public get currentUserValue(): any {
+    return this.currentUserSubject 
+  }
 
-//   login(form){
-//     const formData: FormData = new FormData();
-//     formData.append("email_or_phone", form.phone);
-//     // formData.append("phone", form.email);
-//     formData.append("password", form.password);
-//     return this.http.post(`${environment.endpoint}/users/login`, formData)
-//     .pipe( map((user:any) => {
-//         if (user && user.data.access_token) {
-//             localStorage.setItem(`${environment.currentUserKey}`, JSON.stringify(user));
-//             this.currentUserSubject.next(user);
-//         } return user;
-//     }));
-//     }
-//   logout() {
-//     // return this.http.post(`${environment.endpoint}/users/logout`,{})
-      
-//         localStorage.removeItem(`${environment.currentUserKey}`);
-//         this.currentUserSubject.next(null);
-//         this.router.navigate([''])
-//   }
+
+  login(form){
+    console.log('form')
+    console.log(form)
+    const formData = {
+      "Request": {
+        "userName":`${form.username}`,
+         "password":`${form.password}`
+         }
+    }
+
+    // "Request": {
+    //   "userName":"amr222",
+    //    "password":123456789
+    //    }
+    return this.http.post(`${environment.endpoint}auth/login`, formData);
+  }
+
+
+
+    confirmCode(form){
+      const formData = {
+        "Request": {
+          "uuid":`${form.uuid}`,
+          "otp":`${form.otp}`,
+          "userId":`${form.userId}`
+        }
+      }
+      return this.http.post(`${environment.endpoint}auth/authenticateOtp`, formData)
+    }
+
+  logout() {
+        localStorage.removeItem(`${environment.currentUserKey}`);
+        this.router.navigate([''])
+        setTimeout(() => {
+          window.location.reload()
+        }, 500);
+  }
 
 //   /** 
 //    * register  apis

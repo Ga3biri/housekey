@@ -1,0 +1,46 @@
+<div class="p-3">
+    <div class="theme-container">
+  
+      <div fxLayout="row" fxLayoutAlign="center center" class="my-5">
+          <mat-card [style.max-width.px]="800">
+            <div fxLayout="column" fxLayoutAlign="center center" class="text-center">  
+              <h1 class="uppercase">Complete Sign In</h1>  
+              <a mat-button color="accent" class="w-100">Please, Enter your OTP below there</a>    
+            </div>
+            <form class="codes" [formGroup]="form" (ngSubmit)="submit()" >
+                <div style="display: flex;" class="my-5">
+                    <div>
+                    <input type="text" class="form-control text-center ltr p-0" id="code1" [ngClass]="{'border-danger': submitted && f.code1.errors}" (keyup)="nextStep($event,1)" (focus)="focused(1)" formControlName="code1" maxlength="1"
+                            (paste)="paste($event)" autofocus>
+                    </div>
+                    <div>
+                    <input type="text" class="form-control text-center ltr p-0" id="code2" [ngClass]="{'border-danger': submitted && f.code2.errors}" (keyup)="nextStep($event,2)" (focus)="focused(2)" formControlName="code2" maxlength="1">
+                    </div>
+                    <div>
+                    <input type="text" class="form-control text-center ltr p-0" id="code3" [ngClass]="{'border-danger': submitted && f.code3.errors}" (keyup)="nextStep($event,3)" (focus)="focused(3)" formControlName="code3" maxlength="1">
+                    </div>
+                    <div>
+                    <input type="text" class="form-control text-center ltr p-0" id="code4" [ngClass]="{'border-danger': submitted && f.code4.errors}" (keyup)="nextStep($event,4)" (focus)="focused(4)" formControlName="code4" maxlength="1">
+                    </div>
+                </div>
+
+                <!-- <div style="font-size: 12px;">
+                    didn't recieve code yet ?
+                    <a href="javascript:void(0)"  style="color: #f2317f;">
+                        <span *ngIf="myminute <= 1" (click)="resendAgain()">Resend again.</span>
+                        <span *ngIf="myminute > 1">{{myminute}}</span>
+                    </a>
+                </div> -->
+
+                <div class="text-center mt-2"> 
+                    <button mat-raised-button color="accent" class="uppercase" type="submit">
+                        Sign to My Account
+                    </button>
+                </div> 
+
+            </form>
+          </mat-card>
+      </div> 
+  
+    </div>
+  </div>

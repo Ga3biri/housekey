@@ -6,7 +6,7 @@
     <mat-card class="mt-5 p-5">
       <div fxLayout="row wrap" class="agent-wrapper">
         <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.gt-xs="50" class="p-3">
-            <img [src]="agent.image" [alt]="agent.fullName" class="mw-100 d-block"> 
+            <img src="https://static.rfstat.com/logo-presets/950/thumbnail_2b880270cec8_1x.webp" [alt]="agent.fullName" class="mw-100 d-block" alt="Comapny Photo"> 
         </div>
         <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.gt-xs="50" class="p-3">
             <h2 class="fw-600">{{agent.fullName}}</h2>
@@ -53,7 +53,32 @@
         <div fxFlex="100" fxFlex.gt-sm="33.3" class="p-3">
            
 
-            <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)">
+          <table>
+            <thead class="table">
+              <th>Service</th>
+              <th>Fee</th>
+              <th>Commision</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Buy</td>
+                <td>1000 <small>SR</small></td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <td>Sell</td>
+                <td>200 <small>SR</small></td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <td>Loab</td>
+                <td>2000 <small>SR</small></td>
+                <td>15%</td>
+              </tr>
+            </tbody>
+          </table>
+
+            <!-- <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)">
                 <h3 class="uppercase mb-2">Contact Me</h3>
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>Name</mat-label>
@@ -82,10 +107,11 @@
                 <div class="text-center">
                     <button mat-raised-button color="accent" type="submit">Send Email</button>
                 </div>
-            </form>
+            </form> -->
 
         </div>
 
+        
       </div>
        
     </mat-card>

@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+import { AuthService } from './../../../Services/auth.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/app.service';
 
@@ -7,11 +9,23 @@ import { AppService } from 'src/app/app.service';
 })
 export class Toolbar1Component implements OnInit {
   @Output() onMenuIconClick: EventEmitter<any> = new EventEmitter<any>();
-  constructor(public appService:AppService) { }
+  constructor(public appService:AppService,private auth:AuthService) { }
 
-  ngOnInit() { }
+  currentUser;
+  ngOnInit() { 
+    this.getCurrentUser()
+  }
 
   public sidenavToggle(){
     this.onMenuIconClick.emit();
+  }
+
+  getCurrentUser(){
+    this.currentUser = localStorage.getItem(environment.currentUserKey)
+    this.currentUser = JSON.parse(this.currentUser)
+  }
+
+  LogOut(){
+    this.auth.logout()
   }
 }
