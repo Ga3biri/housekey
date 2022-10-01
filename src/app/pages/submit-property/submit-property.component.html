@@ -15,7 +15,7 @@
                       </div>
                               
                       <div fxFlex="100" class="px-2">
-                        <mat-form-field [appearance]="outline"  class="w-100">
+                        <mat-form-field appearance="outline"  class="w-100">
                             <mat-label>Property Type</mat-label> 
                             <mat-select placeholder="Select Property Type" formControlName="propertyType">
                                 <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType.id">
@@ -26,7 +26,7 @@
                     </div>
             
                     <div fxFlex="100" class="px-2">
-                        <mat-form-field [appearance]="outline"  class="w-100">
+                        <mat-form-field appearance="outline"  class="w-100">
                             <mat-label>Service Type</mat-label>
                             <mat-select placeholder="Select Service Type" formControlName="serviceType">
                                 <mat-option *ngFor="let serviceType of serviceTypes" [value]="serviceType.id">
@@ -36,7 +36,7 @@
                         </mat-form-field>
                     </div>        
                     <div fxFlex="100" class="px-2">                         
-                        <mat-form-field [appearance]="outline"  class="w-100">
+                        <mat-form-field appearance="outline"  class="w-100">
                             <mat-label>Location</mat-label>
                             <mat-select placeholder="Select Location..." formControlName="location" >
                                 <mat-option *ngFor="let location of locations" [value]="location.id">
