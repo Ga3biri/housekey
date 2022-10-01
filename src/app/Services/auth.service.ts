@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -9,13 +10,13 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private currentUserSubject: BehaviorSubject<any>;
+  public currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
 
 
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
 
   // login(form){
@@ -27,7 +28,7 @@ export class AuthService {
 
 
   public get currentUserValue(): any {
-    if(this.currentUserSubject.value != null) { return this.currentUserSubject.value }        
+    return this.currentUserSubject 
   }
 
 
@@ -61,13 +62,13 @@ export class AuthService {
       return this.http.post(`${environment.endpoint}auth/authenticateOtp`, formData)
     }
 
-//   logout() {
-//     // return this.http.post(`${environment.endpoint}/users/logout`,{})
-      
-//         localStorage.removeItem(`${environment.currentUserKey}`);
-//         this.currentUserSubject.next(null);
-//         this.router.navigate([''])
-//   }
+  logout() {
+        localStorage.removeItem(`${environment.currentUserKey}`);
+        this.router.navigate([''])
+        setTimeout(() => {
+          window.location.reload()
+        }, 500);
+  }
 
 //   /** 
 //    * register  apis

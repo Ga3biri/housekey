@@ -12,7 +12,21 @@
     <div fxLayout="row" fxLayoutAlign="end center" class="">
       <!-- <app-currency></app-currency> -->
       <app-lang></app-lang>
-      <app-user-menu></app-user-menu>
+      <!-- <app-user-menu></app-user-menu> -->
+      <span *ngIf="!currentUser?.partyId">
+        <button mat-button [routerLink]="['login']" routerLinkActive="router-link-active"  [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger" class="lang-btn">
+          <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">{{ 'LOGIN' | translate }}</span> 
+        </button>
+  
+        <button mat-button [routerLink]="['register']" [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger" class="lang-btn">
+          <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">{{ 'REGISTER' | translate }}</span> 
+        </button>
+      </span>
+
+      <button *ngIf="currentUser?.partyId" routerLinkActive="router-link-active"  (click)="LogOut()" mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger" class="lang-btn">
+        <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">{{ 'LOGOUT' | translate }}</span> 
+      </button>
+
     </div>    
   </div>           
 </mat-toolbar>  

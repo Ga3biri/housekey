@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { AuthService } from './../../../Services/auth.service';
 // import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
@@ -59,25 +60,32 @@ export class OtpComponent implements OnInit {
   
   submit(){
     if(this.form.invalid){return}
-    // console.log(this.form.value)
     const code = this.form.value['code1'] + this.form.value['code2']  + this.form.value['code3'] + this.form.value['code4'] 
     const formData = {
         "uuid":this.uuid,
         "otp":code,
         "userId":this.userId
     }
-
-
-    console.log('formData')
-    console.log(formData)
-    this.auth.confirmCode(formData).subscribe(response=>{
+    this.auth.confirmCode(formData).subscribe((response:any)=>{
+      console.log('response')
       console.log(response)
+      localStorage.setItem(environment.currentUserKey,JSON.stringify(response.Response.Data))
       Swal.fire(
-        'نجاح',
-        'تم التحقق بنجاح',
+        'Success',
+        'You Logged In Now',
         'success'
         )
-        this.router.navigate([''])
+        // this.auth.currentUserSubject.next(response)
+        // this.currentUserSubject.next(null)
+        
+        if(response.Response.Data.partyId == 3){
+          this.router.navigate(['agents',response.Response.Data.id])
+        }else{
+          this.router.navigate([''])
+          setTimeout(() => {
+            window.location.reload()
+          }, 500);
+        }
     })
   }
 
@@ -128,7 +136,6 @@ export class OtpComponent implements OnInit {
     }
     const prevElement = document.getElementById('code' + (step - 1));
     const nextElement = document.getElementById('code' + (step + 1));
-    console.log(event)
     if (event.code == 'Backspace' && event.target.value === '') {
       event.target.parentElement.parentElement.children[step - 2 > 0 ? step - 2 : 0].children[0].value = ''
       if (prevElement) {

@@ -9,4 +9,10 @@
         font-weight: 600;
         min-width: 24px;
     }
+    table{
+        width: 100%;
+        th,tr,td{
+            text-align: center;
+        }
+    }
 }
