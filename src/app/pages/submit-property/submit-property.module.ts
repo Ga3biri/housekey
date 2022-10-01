@@ -1,3 +1,4 @@
+// import { RequestTableComponent } from './../request-table/request-table.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,6 +9,7 @@ import { SubmitPropertyComponent } from './submit-property.component';
 
 export const routes: Routes = [
   { path: '', component: SubmitPropertyComponent, pathMatch: 'full'  }
+  // { path: 'request', component: RequestTableComponent}
 ];
 
 @NgModule({

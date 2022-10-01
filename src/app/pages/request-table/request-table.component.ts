@@ -7,8 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'request-table',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  templateUrl: './request-table.component.html'
 })
 export class RequestTableComponent implements OnInit {
 

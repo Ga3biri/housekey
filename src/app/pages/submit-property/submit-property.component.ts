@@ -23,6 +23,8 @@ export class SubmitPropertyComponent implements OnInit {
   public lat: number = 40.678178;
   public lng: number = -73.944158;
   public zoom: number = 12;  
+  public serviceTypes = [];
+  public locations = [];
 
   constructor(public appService:AppService, 
               private fb: UntypedFormBuilder, 
@@ -72,6 +74,11 @@ export class SubmitPropertyComponent implements OnInit {
 
     this.setCurrentPosition();
     this.placesAutocomplete();
+
+
+    this.propertyTypes = this.appService.getPropertyTypes();
+    this.serviceTypes = this.appService.getServiceTypes();
+    this.locations = this.appService.getAllLocations();
   }
 
 
@@ -336,5 +343,7 @@ export class SubmitPropertyComponent implements OnInit {
     features.removeAt(index);
   } 
 
-
+  // GoToPage(){
+  //   this.router.navi(['request-table'])
+  // }
 }
