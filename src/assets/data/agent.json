@@ -4,8 +4,6 @@
         "title": "Modern and quirky flat", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "Apartment",
-        "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["For Sale"],
         "city": "New York",
         "zipCode": "10033",
@@ -19,11 +17,11 @@
         "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Refrigerator", "Fireplace", "Swimming Pool", "TV Cable", "WiFi"],
         "featured": false, 
         "priceDollar": {
-            "sale": 40,
+            "sale": 1300000,
             "rent": null
         },
         "priceEuro": {
-            "sale": 70,
+            "sale": 1160000,
             "rent": null
         },
         "bedrooms": 2,
@@ -135,8 +133,6 @@
         "title": "Centrally located office", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "Office",
-        "serviceType": "ServiceType",
-        "locationAsString": "locationAsS333tring",
         "propertyStatus": ["For Rent", "No Fees"],
         "city": "Los Angeles",
         "zipCode": "90044",
@@ -151,11 +147,11 @@
         "featured": true,
         "priceDollar": {
             "sale": null,
-            "rent": 100
+            "rent": 6500
         },
         "priceEuro": {
             "sale": null,
-            "rent": 80
+            "rent": 5800
         },
         "bedrooms": 4,
         "bathrooms": 2,
@@ -276,8 +272,6 @@
         "title": "Comfortable family house", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "House",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["For Sale", "Open House"],
         "city": "Seattle",
         "zipCode": "98104",
@@ -291,11 +285,11 @@
         "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Fireplace", "Sauna", "TV Cable", "WiFi"],
         "featured": false, 
         "priceDollar": {
-            "sale": 120,
+            "sale": 2550000,
             "rent": null
         },
         "priceEuro": {
-            "sale": 100,
+            "sale": 2280000,
             "rent": null
         },
         "bedrooms": 3,
@@ -417,8 +411,6 @@
         "title": "Spacious and warm flat", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "Apartment",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["Hot Offer", "No Fees"],
         "city": "Chicago",
         "zipCode": "60604",
@@ -432,11 +424,11 @@
         "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Fireplace", "Sauna", "TV Cable", "WiFi"],
         "featured": true, 
         "priceDollar": {
-            "sale": 50,
+            "sale": 1450000,
             "rent": null
         },
         "priceEuro": {
-            "sale": 40,
+            "sale": 1300000,
             "rent": null
         },
         "bedrooms": 5,
@@ -553,8 +545,6 @@
         "title": "House with a pool", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "House",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["Sold", "For Sale"],
         "city": "Seattle",
         "zipCode": "98108",
@@ -568,11 +558,11 @@
         "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
         "featured": true, 
         "priceDollar": {
-            "sale": 66,
+            "sale": 4500000,
             "rent": null
         },
         "priceEuro": {
-            "sale": 55,
+            "sale": 4020000,
             "rent": null
         },
         "bedrooms": 1,
@@ -684,8 +674,6 @@
         "title": "Bright and sunny house", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "House",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["For Rent", "No Fees"],
         "city": "Chicago",
         "zipCode": "60609",
@@ -700,11 +688,11 @@
         "featured": true, 
         "priceDollar": {
             "sale": null,
-            "rent": 90
+            "rent": 9000
         },
         "priceEuro": {
             "sale": null,
-            "rent": 80
+            "rent": 8000
         },
         "bedrooms": 2,
         "bathrooms": 2,
@@ -815,8 +803,6 @@
         "title": "Luxury office space", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "Office",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["For Sale", "Hot Offer"],
         "city": "New York",
         "zipCode": "10019",
@@ -830,11 +816,11 @@
         "features": ["Air Conditioning", "Barbeque", "Dryer", "Microwave", "Gym", "Swimming Pool", "Sauna", "TV Cable", "WiFi"],
         "featured": false, 
         "priceDollar": {
-            "sale": 60,
+            "sale": 2500000,
             "rent": null
         },
         "priceEuro": {
-            "sale": 50,
+            "sale": 2200000,
             "rent": null
         },
         "bedrooms": 2,
@@ -956,8 +942,6 @@
         "title": "Centrally located apartment", 
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam veniam sit reprehenderit deserunt ad voluptates id aperiam veritatis! Nobis saepe quos eveniet numquam vitae quis, tenetur consectetur impedit dolore.",
         "propertyType": "Apartment",
-          "serviceType": "ServiceType",
-        "locationAsString": "locationAsString",
         "propertyStatus": ["For Rent", "No Fees"],
         "city": "Los Angeles",
         "zipCode": "90028",
@@ -972,11 +956,11 @@
         "featured": true, 
         "priceDollar": {
             "sale": null,
-            "rent": 50
+            "rent": 5600
         },
         "priceEuro": {
             "sale": null,
-            "rent": 100
+            "rent": 5000
         },
         "bedrooms": 2,
         "bathrooms": 2,

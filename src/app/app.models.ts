@@ -3,6 +3,8 @@ export class Property {
                 public title: string, 
                 public desc: string,
                 public propertyType: string,
+                public serviceType: string,
+                public locationAsString: string,
                 public propertyStatus: string[], 
                 public city: string,
                 public zipCode: string[],
@@ -29,6 +31,7 @@ export class Property {
                 public lastUpdate: string,
                 public views: number){ }
 } 
+
 
 
 export class Area {

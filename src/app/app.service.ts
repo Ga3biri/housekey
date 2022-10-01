@@ -44,6 +44,10 @@ export class AppService {
   public getProperties(): Observable<Property[]>{
     return this.http.get<Property[]>(this.url + 'properties.json');
   }
+ 
+  public getAllAgents(): Observable<Property[]>{
+    return this.http.get<Property[]>(this.url + 'agents.json');
+  }
 
   public getPropertyById(id): Observable<Property>{
     return this.http.get<Property>(this.url + 'property-' + id + '.json');
