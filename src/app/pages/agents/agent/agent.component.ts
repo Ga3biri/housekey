@@ -93,6 +93,7 @@ export class AgentComponent implements OnInit {
   } 
 
   public getAgentById(id){
+    id = 4
     this.agent = this.appService.getAgents().filter(agent=> agent.id == id)[0]; 
   }
    

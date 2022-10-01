@@ -11,7 +11,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class RequestTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'buyer_name', 'broker_name','budget', 'status' ];
+  displayedColumns: string[] = ['id', 'buyer_name', 'broker_name','budget', 'status','action' ];
   dataSource: MatTableDataSource<Property>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -20,6 +20,8 @@ export class RequestTableComponent implements OnInit {
 
   ngOnInit() {
     this.appService.getProperties().subscribe(res => {
+      console.log('res')
+      console.log(res)
       this.initDataSource(res);
     });    
   }
