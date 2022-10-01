@@ -21,13 +21,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.fb.group({
-      userType: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      partyId: ['', Validators.required],
       username: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       email: ['', Validators.compose([Validators.required, emailValidator])],
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-      receiveNewsletter: false                            
-    },{validator: matchingPasswords('password', 'confirmPassword')});
+    });
   }
 
   public onRegisterFormSubmit(values:Object):void {
@@ -36,4 +36,16 @@ export class RegisterComponent implements OnInit {
       this.snackBar.open('You registered successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
     }
   }
+
+
+
+
+  // "Request":{
+  //   "firstName":"amr",
+  //   "lastName":"Nahas",
+  //   "email":"amrelnahas44@gmail.com",
+  //   "userName":"amr222",
+  //   "password":123456789,
+  //   "phoneNumber":504167212,
+  //   "partyId":3
 }
