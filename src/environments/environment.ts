@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   url: '',
-  endpoint:''
+  endpoint:'https://ehakathon.com/api/',
+  currentUserKey:'CurrentUser'
 };
 
 /*
