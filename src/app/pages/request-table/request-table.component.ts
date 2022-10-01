@@ -11,7 +11,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class RequestTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'buyer_name', 'broker_name','budget', 'status','action' ];
+  displayedColumns: string[] = ['id', 'buyer_name', 'broker_name', 'status','action' ];
   dataSource: MatTableDataSource<Property>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
