@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
@@ -45,6 +45,7 @@ export class AgentComponent implements OnInit {
               private activatedRoute: ActivatedRoute, 
               public mediaObserver: MediaObserver,
               public fb: UntypedFormBuilder,
+              private router:Router,
               @Inject(PLATFORM_ID) private platformId: Object) {
     this.settings = this.appSettings.settings;    
     this.watcher = mediaObserver.asObservable()
@@ -183,4 +184,8 @@ export class AgentComponent implements OnInit {
     } 
   }
 
+
+  SendRequest(){
+    this.router.navigate(['submit-property'])
+  }
 }
