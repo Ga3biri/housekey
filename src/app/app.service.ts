@@ -149,6 +149,18 @@ export class AppService {
     ]
   }
 
+  
+  public getServiceTypes(){
+    return [ 
+      { id: 1, name: 'For Sale' },
+      { id: 2, name: 'For Rent' },
+      { id: 3, name: 'Open House' },
+      { id: 4, name: 'No Fees' },
+      { id: 5, name: 'Hot Offer' },
+      { id: 6, name: 'Sold' }
+    ]
+  }
+
   public getCities(){
     return [ 
       { id: 1, name: 'New York' },

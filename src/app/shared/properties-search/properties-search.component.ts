@@ -17,7 +17,7 @@ export class PropertiesSearchComponent implements OnInit {
   public showMore: boolean = false;
   public form: UntypedFormGroup;
   public propertyTypes = [];
-  public propertyStatuses = [];
+  public serviceTypes = [];
   public cities = [];
   public neighborhoods = [];
   public streets = [];
@@ -30,43 +30,20 @@ export class PropertiesSearchComponent implements OnInit {
       this.showMore = true;
     };
     this.propertyTypes = this.appService.getPropertyTypes();
-    this.propertyStatuses = this.appService.getPropertyStatuses();
+    this.serviceTypes = this.appService.getServiceTypes();
     this.cities = this.appService.getCities();
     this.neighborhoods = this.appService.getNeighborhoods();
     this.streets = this.appService.getStreets();
     this.features = this.appService.getFeatures();
     this.form = this.fb.group({
       propertyType: null,
-      propertyStatus: null, 
-      price: this.fb.group({
-        from: null,
-        to: null 
-      }),
+      serviceType: null, 
+     
       city: null,
       zipCode: null,
       neighborhood: null,
       street: null,
-      bedrooms: this.fb.group({
-        from: null,
-        to: null 
-      }),
-      bathrooms: this.fb.group({
-        from: null,
-        to: null 
-      }),
-      garages: this.fb.group({
-        from: null,
-        to: null 
-      }),
-      area: this.fb.group({
-        from: null,
-        to: null 
-      }),
-      yearBuilt: this.fb.group({
-        from: null,
-        to: null 
-      }),       
-      features: this.buildFeatures()
+   
     }); 
 
     this.onSearchChange.emit(this.form);
@@ -103,36 +80,12 @@ export class PropertiesSearchComponent implements OnInit {
   public reset(){     
     this.form.reset({ 
       propertyType: null,
-      propertyStatus: null, 
-      price: {
-        from: null,
-        to: null 
-      },
+      serviceType: null, 
+ 
       city: null,
       zipCode: null,
       neighborhood: null,
       street: null,
-      bedrooms: {
-        from: null,
-        to: null 
-      },
-      bathrooms: {
-        from: null,
-        to: null 
-      },
-      garages: {
-        from: null,
-        to: null 
-      },
-      area: {
-        from: null,
-        to: null 
-      },
-      yearBuilt: {
-        from: null,
-        to: null 
-      },       
-      features: this.features    
     }); 
   }
 
