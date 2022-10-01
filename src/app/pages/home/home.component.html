@@ -20,20 +20,24 @@
                 [fullscreen]="false">
 </app-header-map>
 
-<app-header-video *ngIf="settings.header == 'video'" 
+<!-- <app-header-video *ngIf="settings.header == 'video'" 
                 [backgroundVideo]="'http://themeseason.com/data/videos/video-1.mp4'" 
                 [contentOffsetToTop]="true"
                 [title]="'Find your house key'"
                 [desc]="'Leading Real Estate Company'"
                 [isHomePage]="true"
                 [fullscreen]="true">
-</app-header-video>
+</app-header-video> -->
 
 <div class="px-3">
+    
+
     <div class="theme-container">
                 
         <mat-card class="main-content-header">
-
+            <h1 class="section-title" style="text-align: center;">Meet our agents</h1>
+            <br/>
+            <br/>
             <app-properties-search 
                 [variant]="settings.searchPanelVariant"
                 [searchOnBtnClick]="settings.searchOnBtnClick"
@@ -47,7 +51,6 @@
     </div>
     
     <div class="theme-container"> 
-
         <div fxLayout="row wrap" class="properties-wrapper">
             
             <div fxFlex="100" fxLayoutAlign="start start" class="p-2"> 
@@ -67,7 +70,7 @@
                                         (onChangeSorting)="changeSorting($event)"
                                         (onChangeViewType)="changeViewType($event)"></app-properties-toolbar>
             </div>
-            <div *ngFor="let property of properties" [fxFlex]="(viewType=='grid') ? viewCol : 100" class="item">                         
+            <div *ngFor="let property of agents" [fxFlex]="(viewType=='grid') ? viewCol : 100" class="item">                         
                 <app-property-item [property]="property" [viewType]="viewType" [viewColChanged]="viewCol"></app-property-item>
             </div>
             <div *ngIf="properties?.length" fxFlex="100" fxLayoutAlign="center center" class="p-2 mt-2">                
@@ -100,9 +103,9 @@
 <app-hot-offer-today [propertyId]="4"></app-hot-offer-today> 
 
 <app-featured-properties [properties]="featuredProperties"></app-featured-properties>
-
+<!-- 
 <app-our-agents></app-our-agents>
-      
+       -->
 <app-clients></app-clients>
 
 <app-get-in-touch></app-get-in-touch>

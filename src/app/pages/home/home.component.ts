@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   public slides = [];
   public properties: Property[];
+  public agents: Property[];
   public viewType: string = 'grid';
   public viewCol: number = 25;
   public count: number = 8;
@@ -58,6 +59,7 @@ export class HomeComponent implements OnInit {
     this.getSlides();
     this.getLocations();
     this.getProperties();  
+    this.getAgents();  
     this.getFeaturedProperties();
   }
 
@@ -65,6 +67,7 @@ export class HomeComponent implements OnInit {
     if(this.settings.loadMore.load){     
       this.settings.loadMore.load = false;     
       this.getProperties();  
+    this.getAgents();  
     }
   }
 
@@ -128,6 +131,49 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  public getAgents(){  
+    //console.log('get properties by : ', this.searchFields);  
+    this.appService.getAllAgents().subscribe(data => {      
+      if(this.agents && this.agents.length > 0){  
+        this.settings.loadMore.page++;
+        this.pagination.page = this.settings.loadMore.page; 
+      }
+      let result = this.filterData(data); 
+      if(result.data.length == 0){
+        this.agents.length = 0;
+        this.pagination = new Pagination(1, this.count, null, 2, 0, 0);  
+        this.message = 'No Results Found';
+        return false;
+      }   
+      if(this.agents && this.agents.length > 0){   
+        this.agents = this.agents.concat(result.data);          
+      }
+      else{
+        this.agents = result.data;  
+      } 
+      this.pagination = result.pagination;
+      this.message = null;
+
+      if(this.agents.length == this.pagination.total){
+        this.settings.loadMore.complete = true;
+        this.settings.loadMore.result = this.agents.length;
+      }
+      else{
+        this.settings.loadMore.complete = false;
+      }
+
+      if(this.settings.header == 'map'){
+        this.locations.length = 0;
+        this.agents.forEach(p => {
+          let loc = new Location(p.id, p.location.lat, p.location.lng);
+          this.locations.push(loc);
+        });
+        this.locations = [...this.locations];
+      } 
+     
+    })
+  }
+
   public resetLoadMore(){
     this.settings.loadMore.complete = false;
     this.settings.loadMore.start = false;
@@ -141,6 +187,7 @@ export class HomeComponent implements OnInit {
 
   public searchClicked(){ 
     this.properties.length = 0;
+    this.agents.length = 0;
     this.getProperties(); 
   }
   public searchChanged(event){    
@@ -151,12 +198,15 @@ export class HomeComponent implements OnInit {
         this.removedSearchField = null;
       });
       if(!this.settings.searchOnBtnClick){     
-        this.properties.length = 0;  
+        this.properties.length = 0; 
+        this.agents.length = 0;
+
       }            
     }); 
     event.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe(() => { 
       if(!this.settings.searchOnBtnClick){     
         this.getProperties(); 
+        this.getAgents(); 
       }
     });       
   } 
@@ -171,14 +221,21 @@ export class HomeComponent implements OnInit {
     this.count = count;
     this.resetLoadMore();   
     this.properties.length = 0;
+    this.agents.length = 0; 
+
     this.getProperties();
+    this.getAgents(); 
+
 
   }
   public changeSorting(sort){    
     this.sort = sort;
     this.resetLoadMore(); 
-    this.properties.length = 0;
+    this.properties.length = 0; 
+    this.agents.length = 0; 
     this.getProperties();
+    this.getAgents(); 
+
   }
   public changeViewType(obj){ 
     this.viewType = obj.viewType;

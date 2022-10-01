@@ -33,9 +33,9 @@
 <mat-toolbar id="main-toolbar" class="mat-elevation-z2"> 
   <div class="theme-container" fxLayout="row" fxLayoutAlign="space-between center">
     <a class="logo" routerLink="/" ><app-logo></app-logo></a> 
-    <div fxShow="false" fxShow.gt-sm class="horizontal-menu">            
+    <!-- <div fxShow="false" fxShow.gt-sm class="horizontal-menu">            
         <app-horizontal-menu [menuParentId]="0"></app-horizontal-menu>
-    </div> 
+    </div>  -->
     <div fxLayout="row" fxLayoutAlign="start center">
       <a routerLink="/account/favorites" mat-icon-button matTooltip="Favorites" fxShow="false" fxShow.gt-md>
           <mat-icon [matBadge]="appService.Data.favorites.length" 
@@ -50,7 +50,7 @@
                     matBadgeColor="warn">compare_arrows</mat-icon>
       </a>      
       <a routerLink="/submit-property" mat-mini-fab color="primary" fxHide="false" fxHide.gt-xs><mat-icon>add</mat-icon></a>
-      <a routerLink="/submit-property" mat-raised-button color="primary" fxShow="false" fxShow.gt-xs class="uppercase">{{ 'SUBMIT_PROPERTY' | translate }}</a>
+      <!-- <a routerLink="/submit-property" mat-raised-button color="primary" fxShow="false" fxShow.gt-xs class="uppercase">{{ 'SUBMIT_PROPERTY' | translate }}</a> -->
     </div>   
   </div>     
 </mat-toolbar>
